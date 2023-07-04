@@ -40,7 +40,7 @@ const options = {
   onClose(selectedDates) {
     //   console.log(selectedDates[0]);
       
-      const validDate = selectedDates[0] - new Date();
+      let validDate = selectedDates[0] - new Date();
     
       function createPromise(validDate) {
         return new Promise((res, rej) => {
@@ -65,9 +65,9 @@ const options = {
               
               refs.start.setAttribute('disabled', true);
               
-              const deltaTime = selectedDates[0] - new Date();
-              const countdown = convertMs(deltaTime);
-              const values = Object.values(countdown);
+              let deltaTime = selectedDates[0] - new Date();
+              let countdown = convertMs(deltaTime);
+              let values = Object.values(countdown);
 
               refs.value.forEach((el, i) => {
                   el.textContent = values[i];
