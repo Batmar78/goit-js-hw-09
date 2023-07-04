@@ -76,11 +76,11 @@ const options = {
               if (deltaTime < 1000) {
                   clearInterval(intervalID);
                   refs.start.setAttribute('disabled', true);
-              }; 
+              };
               
           }, 1000);
       
-      };
+      }
     
     },
 
