@@ -78,7 +78,7 @@ const options = {
               };
               
           }, 1000);
-          }
+      };
       
       
     },
@@ -86,7 +86,8 @@ const options = {
 };
 
 
-const flatpickr = flatpickr(refs.input, options);
+// const flatpickr = flatpickr(refs.input, options);
+flatpickr(refs.input, options);
 
 refs.start.setAttribute('disabled', true);
 
