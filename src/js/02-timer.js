@@ -77,8 +77,9 @@ const options = {
                   refs.start.setAttribute('disabled', true);
               };
               
-          }, 1000);
-      };
+          }, 1000)
+          ;
+};
       
       
     },
