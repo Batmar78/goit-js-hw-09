@@ -12,7 +12,12 @@ let formData = {
 };
 
 
-function onFormSubmit({ delay, step, amount }) {
+
+function onFormSubmit() {
+  
+  const STEP = formData.step;
+  onFormInput();
+
   setTimeout(() => {
     createPromise({ position, delay })
       .then(({ position, delay }) => {
@@ -23,20 +28,25 @@ function onFormSubmit({ delay, step, amount }) {
         Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`)
     
       });
-  }, delay);
+  }, STEP);
 
   
  };
 
 function onFormInput(evt) { 
+  
  
   formData[evt.target.name] = evt.target.value;
   console.log(formData);
- console.log(formData.delay);
+//  console.log(formData.delay);
+  return formData;
 };
+
+
 
 function createPromise({ position, delay }) {
   return new Promise((res, rej) => {
+    const DELAY = delay;
     setTimeout(() => {
       const shouldResolve = Math.random() > 0.3;
       if (shouldResolve) {
@@ -44,7 +54,7 @@ function createPromise({ position, delay }) {
       } else {
         rej({ position, delay })
       }
-    }, delay);
+    }, DELAY);
    
   });
 };

@@ -9,7 +9,7 @@ const refs = {
     field: document.querySelectorAll('.field'),
     value: document.querySelectorAll('.value'),
     label: document.querySelectorAll('.label'),
-}
+};
 
 refs.timer.style.maxWidth = '165px';
 refs.timer.style.padding = '10px';
@@ -78,7 +78,7 @@ const options = {
               };
               
           }, 1000);
-        }
+      };
       
       
     },
