@@ -17,14 +17,18 @@ function onFormSubmit(evt) {
   evt.preventDefault();
 
   let delay = Number(formData.delay);
-  let step = Number(formData.step);
+  let step;
   
   for (let i = 1; i <= Number(formData.amount); i += 1) {
     
       const position = i;
       
     setTimeout(() => {
-      
+      if (i === 1) {
+        step = 0;
+      } else {
+        step = Number(formData.step);
+      }
       delay += step; 
      
     createPromise({ position, delay })
